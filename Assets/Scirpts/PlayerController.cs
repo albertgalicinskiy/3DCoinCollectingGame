@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour
 
     float xInput;
     float yInput;
+
+    int score = 0; // our score for collection coins
+
+    public int winScore; // set max score equal to our coins
+
+    public GameObject winText; // will store our Win Text and appear it
     
 
     private void Awake() 
@@ -44,5 +50,22 @@ public class PlayerController : MonoBehaviour
 
         // Apply a force to this Rigidbody in direction of this GameObject to left/right and back/forward
         rb.AddForce(xInput * speed, 0, yInput * speed); //
+    }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        // When we collide to the Coin it will disappear
+        if (other.gameObject.tag == "Coin")
+        {
+            other.gameObject.SetActive(false);
+
+            score++; // increment score
+
+            if (score >= winScore)
+            {
+                // gamewwin
+                winText.SetActive(true);
+            }
+        }
     }
 }

@@ -153,8 +153,8 @@ Rigidbody:
   m_GameObject: {fileID: 123242624}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.2
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -269,7 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df001ac05b17ec4409b845f2500cf584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
+  winScore: 7
+  winText: {fileID: 1381047864}
 --- !u!1001 &247282495
 PrefabInstance:
   m_ObjectHideFlags: 0
